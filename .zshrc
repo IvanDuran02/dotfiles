@@ -14,6 +14,7 @@ export PATH="$HOME/Coding/Clones/swww/target/release:$PATH"
 
 alias vim=nvim
 alias wezterm='flatpak run org.wezfurlong.wezterm'
+alias discord='flatpak run com.discordapp.Discord'
 
 
 # Set list of themes to pick from when loading at random
@@ -108,3 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+eval "$(oh-my-posh init zsh --config 'https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_mocha.omp.json')"
+#eval "$(oh-my-posh init zsh --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin.omp.json)"
+#eval "$(oh-my-posh init zsh --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/agnoster.omp.json)"
+

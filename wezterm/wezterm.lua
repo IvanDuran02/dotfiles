@@ -7,17 +7,16 @@ return {
 	-- Font
 	font = wezterm.font_with_fallback({
 		"JetBrainsMono Nerd Font",
-		"FiraCode Nerd Font",
 	}),
 	font_size = 20,
 	line_height = 1.1,
 
 	-- Colors
-	color_scheme = "Catppuccin Mocha",
+	-- color_scheme = "Catppuccin Mocha", -- It's a little too gray for me at the moment
 
 	-- Opacity (fake transparency on Wayland)
-	window_background_opacity = 0.88,
-	text_background_opacity = 0.88,
+	window_background_opacity = 0.8,
+	text_background_opacity = 0.85,
 
 	-- Padding
 	window_padding = {
@@ -34,7 +33,7 @@ return {
 	hide_tab_bar_if_only_one_tab = true,
 
 	-- Cursor animation
-	animation_fps = 60,
+	animation_fps = 144,
 	cursor_blink_rate = 500,
 	default_cursor_style = "BlinkingBar",
 
