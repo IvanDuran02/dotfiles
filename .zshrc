@@ -13,7 +13,7 @@ ZSH_THEME="robbyrussell"
 export PATH="$HOME/Coding/Clones/swww/target/release:$PATH"
 
 alias vim=nvim
-alias wezterm="WAYLAND_DISPLAY=wayland-0 wezterm"
+alias wezterm='flatpak run org.wezfurlong.wezterm'
 
 
 # Set list of themes to pick from when loading at random

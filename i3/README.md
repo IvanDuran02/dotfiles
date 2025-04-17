@@ -1,0 +1,3 @@
+# My I3wm config
+
+Just some custom keybindings for screenshots and gaps etc...
