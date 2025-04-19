@@ -66,6 +66,7 @@ return {
 					"clangd", -- C++
 					"zls", -- Zig
 					"pyright",
+					"gopls",
 				},
 				automatic_installation = true,
 				handlers = {

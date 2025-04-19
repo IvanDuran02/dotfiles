@@ -25,7 +25,7 @@ set $term flatpak run org.wezfurlong.wezterm
 set $menu wofi --show drun
 
 # Wallpaper Engine
-exec_always bash -c 'sleep 1 && swww-daemon'
+exec swww-daemon > /dev/null 2>&1
 exec_always swww img $HOME/Pictures/Wallpapers/Favorites/dragon_girl.jpg
 
 # Display Configuration:
@@ -51,11 +51,7 @@ output $sm mode 1920x1080@144hz position 0,0
     # Start your launcher
     bindsym $mod+d exec $menu
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
+    # Drag Windows
     floating_modifier $mod normal
 
     # Reload the configuration file
@@ -63,6 +59,21 @@ output $sm mode 1920x1080@144hz position 0,0
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    # Kill a window that is clicked on
+    bindsym $mod+Shift+x exec --no-startup-id xkill &
+
+    # Screenshot to file (select area)
+    bindsym Ctrl+$mod+s exec maim --format=png --select "/home/$USER/Pictures/Screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ').png"
+
+    # Screenshot to clipboard (selected area)
+    bindsym Shift+$mod+s exec maim --format=png --select | xclip -selection clipboard -t image/png
+
+    input "pointer:Logitech USB Optical Mouse" {
+    accel_profile "flat"
+    pointer_accel 0
+}
+
 
 # Moving around:
     # Move your focus around
@@ -218,11 +229,6 @@ bar {
     default_border none
     default_border pixel 0
 
-    # Screenshot to file (select area)
-    bindsym Ctrl+$mod+s exec maim --format=png --select "/home/$USER/Pictures/Screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ').png"
-
-    # Screenshot to clipboard (selected area)
-    bindsym Shift+$mod+s exec maim --format=png --select | xclip -selection clipboard -t image/png
 
 
 include /etc/sway/config.d/*

@@ -10,12 +10,14 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/Coding/Clones/swww/target/release:$PATH"
+export PATH="$PATH:/home/ivan/Coding/Carbon/carbon_toolchain-0.0.0-0.nightly.2025.04.17/bin"
 
 alias vim=nvim
 alias wezterm='flatpak run org.wezfurlong.wezterm'
 alias discord='flatpak run com.discordapp.Discord'
-
+alias open=thunar
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -112,4 +114,8 @@ source $ZSH/oh-my-zsh.sh
 eval "$(oh-my-posh init zsh --config 'https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin_mocha.omp.json')"
 #eval "$(oh-my-posh init zsh --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin.omp.json)"
 #eval "$(oh-my-posh init zsh --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/agnoster.omp.json)"
+
+if ! pgrep -x "swww-daemon" > /dev/null; then
+  swww-daemon > /dev/null 2>&1 &
+fi
 

@@ -16,7 +16,7 @@ return {
 
 	-- Opacity (fake transparency on Wayland)
 	window_background_opacity = 0.8,
-	text_background_opacity = 0.85,
+	text_background_opacity = 0.70,
 
 	-- Padding
 	window_padding = {
