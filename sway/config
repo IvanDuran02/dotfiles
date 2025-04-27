@@ -34,7 +34,7 @@ output $sm mode 1920x1080@144hz position 0,0
 
 ### Key bindings
     # Start a terminal
-    bindsym $mod+Return exec $term -e tmux
+    bindsym $mod+Return exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -64,10 +64,10 @@ output $sm mode 1920x1080@144hz position 0,0
     bindsym $mod+Shift+x exec --no-startup-id xkill &
 
     # Screenshot to file (select area)
-    bindsym Ctrl+$mod+s exec maim --format=png --select "/home/$USER/Pictures/Screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ').png"
+bindsym Ctrl+$mod+s exec grim -g "$(slurp)" "/home/$USER/Pictures/Screenshots/screenshot-$(date -u +'%Y%m%d-%H%M%SZ').png"
 
-    # Screenshot to clipboard (selected area)
-    bindsym Shift+$mod+s exec maim --format=png --select | xclip -selection clipboard -t image/png
+# Screenshot to clipboard (select area)
+bindsym Shift+$mod+s exec grim -g "$(slurp)" - | wl-copy
 
     input "pointer:Logitech USB Optical Mouse" {
     accel_profile "flat"
@@ -180,7 +180,7 @@ mode "resize" {
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
-    bindsym $right resize grZXCV1234567890-ow width 10px
+    bindsym $right resize grow width 10px
 
     # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
@@ -211,8 +211,7 @@ bindsym $mod+r mode "resize"
 bar {
     position bottom
 
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    status_command ~/dotfiles/sway/scripts/status.sh
 
     colors {
         statusline #ffffff
