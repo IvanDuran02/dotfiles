@@ -1,4 +1,4 @@
--- vim.opt.guicursor = "" -- sets fat cursor even on insert mode.
+vim.opt.guicursor = "" -- sets fat cursor even on insert mode.
 
 -- sets line numbers and relative order
 vim.opt.nu = true

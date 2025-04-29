@@ -14,3 +14,5 @@ vim.opt.cursorline = true
 vim.cmd([[
     highlight CursorLineNr cterm=bold ctermfg=208 guifg=LightRed gui=bold
 ]])
+
+vim.opt.guicursor = "n-v-c:block-blinkon500,i-ci-ve:ver25-blinkon500,r-cr:hor20-blinkon500"

@@ -16,6 +16,9 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
 
+# Bazel
+export PATH=$PATH:$(go env GOPATH)/bin
+alias bazel=bazelisk
 
 # Golang
 export PATH="$HOME/go/bin:$PATH"
@@ -92,3 +95,16 @@ eval "$(oh-my-posh init zsh --config 'https://github.com/JanDeDobbeleer/oh-my-po
 #eval "$(oh-my-posh init zsh --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/catppuccin.omp.json)"
 #eval "$(oh-my-posh init zsh --config https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/agnoster.omp.json)"
 
+
+# Created by `pipx` on 2025-04-27 05:56:44
+export PATH="$PATH:/home/ivan/.local/bin"
+
+# Set blinking bar cursor on shell startup
+echo -ne '\e[5 q'
+
+function restore_cursor {
+  # Reset to blinking skinny bar
+  echo -ne '\e[5 q'
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd restore_cursor
