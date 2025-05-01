@@ -8,7 +8,7 @@ return {
 	font = wezterm.font_with_fallback({
 		"JetBrainsMono Nerd Font",
 	}),
-	font_size = 20,
+	font_size = 21,
 	line_height = 1.1,
 
 	-- Colors

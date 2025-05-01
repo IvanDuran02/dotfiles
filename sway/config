@@ -43,7 +43,7 @@ output $sm mode 1920x1080@144hz position 0,0
     bindsym $mod+Shift+d exec 'flatpak run com.discordapp.Discord'
 
     # Open Chrome
-    bindsym $mod+Shift+f exec google-chrome
+    bindsym $mod+Shift+f exec firefox
 
     # Open Pavucontrol
     bindsym $mod+Shift+p exec pavucontrol

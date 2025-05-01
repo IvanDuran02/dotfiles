@@ -11,5 +11,7 @@ ln -sf ~/dotfiles/hypr ~/.config/hypr
 ln -sf ~/dotfiles/i3 ~/.config/i3
 ln -sf ~/dotfiles/sway ~/.config/sway
 
+bash ~/dotfiles/Scripts/fix-audio.sh
+
 echo "Done..."
 # add more here
