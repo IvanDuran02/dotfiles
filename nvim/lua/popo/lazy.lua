@@ -30,7 +30,7 @@ local lazy_plugins = {
 			require("harpoon").setup({
 				global_settings = {
 					-- global configs
-					mark_branch = true,
+					-- mark_branch = true, For branch specific marks
 				},
 			})
 		end,
